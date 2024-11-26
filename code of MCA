@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
-
+import os
 
 class MyCodingAssistant:
     def __init__(self, root):
@@ -34,37 +34,42 @@ class MyCodingAssistant:
         quit_button.pack(pady=20)
 
     def convert_code(self):
-        """Simulate converting code between programming languages."""
+        \"\"\"Simulate converting code between programming languages.\"\"\"
         file_path = filedialog.askopenfilename(title="Select Code File", filetypes=(("Python Files", "*.py"), ("Text Files", "*.txt"), ("All Files", "*.*")))
-        if file_path:
-            # Simulate a code conversion process
-            converted_path = file_path.replace(".py", "_converted.txt")
+        if not file_path:
+            messagebox.showwarning("No File Selected", "Please select a file to convert.")
+            return
+        try:
+            base, ext = os.path.splitext(file_path)
+            converted_path = base + "_converted.txt"
             with open(converted_path, "w") as f:
                 f.write(f"Converted code from {file_path}. This is a simulation.")
             messagebox.showinfo("Code Conversion", f"Code successfully converted! Saved as {converted_path}")
+        except Exception as e:
+            messagebox.showerror("Error", f"An error occurred: {str(e)}")
 
     def show_info(self):
-        """Show programming language information."""
+        \"\"\"Show programming language information.\"\"\"
         info = (
-            "Python: General-purpose, easy for beginners, versatile.\n"
-            "JavaScript: Used for web development, interactive front-end apps.\n"
-            "Java: Popular for large-scale applications and cross-platform use.\n"
-            "C++: Used for high-performance applications like games and systems.\n"
+            "Python: General-purpose, easy for beginners, versatile.\\n"
+            "JavaScript: Used for web development, interactive front-end apps.\\n"
+            "Java: Popular for large-scale applications and cross-platform use.\\n"
+            "C++: Used for high-performance applications like games and systems.\\n"
         )
         messagebox.showinfo("Programming Language Info", info)
 
     def simplify_download(self):
-        """Simulate simplifying the download process."""
+        \"\"\"Simulate simplifying the download process.\"\"\"
         instructions = (
-            "1. Go to the official website.\n"
-            "2. Select your operating system.\n"
-            "3. Click the 'Download' button.\n"
-            "4. Follow the installation wizard to complete setup.\n"
+            "1. Go to the official website.\\n"
+            "2. Select your operating system.\\n"
+            "3. Click the 'Download' button.\\n"
+            "4. Follow the installation wizard to complete setup.\\n"
         )
         messagebox.showinfo("Simplify Download Process", instructions)
 
     def streamline_tools(self):
-        """Simulate streamlining tools into one workflow."""
+        \"\"\"Simulate streamlining tools into one workflow.\"\"\"
         messagebox.showinfo("Streamline Tools", "All essential tools are unified into MCA for efficient work!")
 
 
@@ -72,4 +77,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = MyCodingAssistant(root)
     root.mainloop()
+
 
