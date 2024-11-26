@@ -8,31 +8,31 @@ A project designed to assist developers by providing coding suggestions and solu
    git clone https://github.com/username/mca-3.git
 
  2. Navigate to the project directory:
-    cd mca-3
+    "cd mca-3"
 
  3.Install the required dependencies:
-pip install -r requirements.txt
+   "pip install -r requirements.txt"
 
-4.Run the prototype:
-python main.py
+ 4.Run the prototype:
+   "python main.py"
 
 ## Requirements  
-- Python 3.8 or higher  
-- Install dependencies:  
+- Python 3.8 or higher
+- Libraries mentioned in requirements.txt  
+  Install dependencies:  
   ```bash
-  pip install -r requirements.txt
+  "pip install -r requirements.txt"
+
+
+
+About the Project
+MCA-3 aims to help developers:
+-Generate coding solutions for common problems.
+-Provide intelligent suggestions for code improvements.
 
 
 
 
 
 
-3 ز
 
- 3ز
-3ز
-
-3ز2ز
-3ز    
-3ز
-    
